@@ -1,6 +1,4 @@
-# HAProxy - JA3N Client-Fingerprint - Lua Plugin
-
-**WARNING: This plugin is still in early development! DO NOT USE IN PRODUCTION!**
+# HAProxy - JA3N TLS Client-Fingerprint - Lua Plugin
 
 ## Intro
 
@@ -14,6 +12,7 @@ About JA3:
 About JA4:
 
 * [HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4)
+* [JA4+ Suite](https://github.com/FoxIO-LLC/ja4/blob/main/technical_details/README.md)
 * [FoxIO Repository](https://github.com/FoxIO-LLC/ja4)
 * [Cloudflare Blog](https://blog.cloudflare.com/ja4-signals)
 * [FoxIO Blog](https://blog.foxio.io/ja4%2B-network-fingerprinting)
@@ -57,5 +56,5 @@ If you have:
 
 
 ```bash
-127.0.0.1:35046 [16/Aug/2024:14:49:56.204] test_ja4~ test_ja4/<NOSRV> 0/-1/-1/-1/0 200 49 - - PR-- 1/1/0/0/0 0/0 {t13d1715h2_002f,0035,009c,009d,1301,1302,1303,c009,c00a,c013,c014,c02b,c02c,c02f,c030,cca8,cca9_0005,000a,000b,000d,0017,001c,0022,0029,002b,002d,0033,fe0d,ff01|t13d1715h2_4a3d28116287_c114573b7948|} "GET https://localhost:6969/ HTTP/2.0"
+127.0.0.1:35898 [16/Aug/2024:16:09:43.216] test_ja4~ test_ja4/<NOSRV> 0/-1/-1/-1/0 200 49 - - PR-- 1/1/0/0/0 0/0 {771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-10-11-13-16-23-28-34-35-43-45-5-51-65037-65281,29-23-24-25-256-257,0|6de49ac34a6c56203da4665ceffb91c3} "GET https://localhost:6969/ HTTP/2.0"
 ```
