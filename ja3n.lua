@@ -13,7 +13,7 @@
 --   log: http-request capture var(txn.fingerprint_ja3n) len 32
 --   acl: var(txn.fingerprint_ja3n) -m str a195b9c006fcb23ab9a2343b0871e362
 
-function split_string(str, delimiter)
+local function split_string(str, delimiter)
     local result = {}
     local from  = 1
     local delim_from, delim_to = string.find(str, delimiter, from)
