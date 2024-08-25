@@ -5,13 +5,15 @@
 -- JA3N = sorted extensions to tackle browsers randomizing their order
 -- see: https://tlsfingerprint.io/norm_fp
 -- examples:
---   before (JA3): 771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-23-65281-10-11-16-5-34-51-43-13-45-28-65037-41,29-23-24-25-256-257,0
---   after (JA3N): 771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-10-11-13-16-23-28-34-41-43-45-5-51-65037-65281,29-23-24-25-256-257,0
+--   before (JA3): 51-27-0-16-17513-65281-23-65037-11-45-43-5-35-10-18-13
+--   after (JA3N): 0-5-10-11-13-16-18-23-27-35-43-45-51-17513-65037-65281
 -- usage:
 --   register: lua-load /etc/haproxy/lua/ja3n.lua (in global)
 --   run: http-request lua.fingerprint_ja3n
 --   log: http-request capture var(txn.fingerprint_ja3n) len 32
 --   acl: var(txn.fingerprint_ja3n) -m str a195b9c006fcb23ab9a2343b0871e362
+
+local DEBUG = false
 
 local function split_string(str, delimiter)
     local result = {}
@@ -26,14 +28,33 @@ local function split_string(str, delimiter)
     return result
 end
 
+local function sortNumbers(a, b)
+    if a == nil or b == nil
+    then
+        return false
+    end
+
+    return tonumber(a) < tonumber(b)
+end
+
+local function debug_var(txn, name, value)
+    if (DEBUG)
+    then
+        txn:set_var('txn.fingerprint_ja3n_debug_' .. name, value)
+    end
+end
+
+
 function fingerprint_ja3n(txn)
     local p1 = tostring(txn.f:ssl_fc_protocol_hello_id())
     local p2 = tostring(txn.c:be2dec(txn.f:ssl_fc_cipherlist_bin(1), '-', 2))
 
     local p3u = tostring(txn.c:be2dec(txn.f:ssl_fc_extlist_bin(1), '-', 2))
+    debug_var(txn, 'extensions_1', p3u)
     local p3l = split_string(p3u, '-')
-    table.sort(p3l)
+    table.sort(p3l, sortNumbers)
     local p3 = table.concat(p3l, '-')
+    debug_var(txn, 'extensions_2', p3)
 
     local p4 = tostring(txn.c:be2dec(txn.f:ssl_fc_eclist_bin(1),'-',2))
     local p5 = tostring(txn.c:be2dec(txn.f:ssl_fc_ecformats_bin(),'-',1))
