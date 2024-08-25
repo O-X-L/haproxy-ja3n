@@ -29,7 +29,7 @@ local function split_string(str, delimiter)
 end
 
 local function sortNumbers(a, b)
-    if a == nil or b == nil
+    if (a == nil or b == nil)
     then
         return false
     end
