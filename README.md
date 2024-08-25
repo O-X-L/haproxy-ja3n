@@ -43,18 +43,7 @@ If you have:
 
 ### Testing
 
-* Create snakeoil certificate:
-
-  ```bash
-  openssl req -x509 -newkey rsa:4096 -sha256 -nodes -subj "/CN=HAProxy JA3N Test" -addext "subjectAltName = DNS:localhost,IP:127.0.0.1" -keyout /tmp/haproxy.key.pem -out /tmp/haproxy.crt.pem -days 30
-  cat /tmp/haproxy.crt.pem /tmp/haproxy.key.pem > /tmp/haproxy.pem
-  ```
-
-* Link the LUA script: `ln -s $(pwd)/ja3n.lua /tmp/haproxy_ja3n.lua`
-* You can run the `haproxy_example.cfg` manually like this: `haproxy -W -f haproxy_example.cfg`
+* Run: `bash test/run.sh`
 * Access the test website: https://localhost:6969/
 
-
-```bash
-127.0.0.1:35898 [16/Aug/2024:16:09:43.216] test_ja4~ test_ja4/<NOSRV> 0/-1/-1/-1/0 200 49 - - PR-- 1/1/0/0/0 0/0 {771,4865-4867-4866-49195-49199-52393-52392-49196-49200-49162-49161-49171-49172-156-157-47-53,0-10-11-13-16-23-28-34-35-43-45-5-51-65037-65281,29-23-24-25-256-257,0|6de49ac34a6c56203da4665ceffb91c3} "GET https://localhost:6969/ HTTP/2.0"
-```
+Exit with `CTRL+C`

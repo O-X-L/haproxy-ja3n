@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HAProxy Static Page</title>
+    </head>
+    <body>
+        <h2>FINGERPRINT</h2>
+        <p>
+            fingerprint: %[var(txn.fingerprint_ja3n)]
+        </p>
+        <hr>
+        <h2>DEBUG</h2>
+        <p>
+            fingerprint_raw: %[var(txn.fingerprint_ja3n_raw)]
+        </p>
+        <hr>
+        <p>
+            ssl_hello_id: %[ssl_fc_protocol_hello_id]
+        </p>
+        <hr>
+        <p>
+            ssl_protocol: %[ssl_fc_protocol]
+        </p>
+        <hr>
+        <p>
+            extensions unsorted: %[var(txn.fingerprint_ja3n_debug_extensions_1)]
+        </p>
+        <hr>
+        <p>
+            ... extensions sorted: %[var(txn.fingerprint_ja3n_debug_extensions_2)]
+        </p>
+    </body>
+</html>
