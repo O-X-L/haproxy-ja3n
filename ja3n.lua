@@ -39,7 +39,7 @@ function fingerprint_ja3n(txn)
     local p5 = tostring(txn.c:be2dec(txn.f:ssl_fc_ecformats_bin(),'-',1))
 
     local fingerprint = p1 .. ',' .. p2 .. ',' .. p3 .. ',' .. p4 .. ',' .. p5
-    local fingerprint_hash = string.lower(tostring(txn.c:hex(txn.c:digest(fingerprint, 'md5'))))
+    local fingerprint_hash = string.lower(txn.c:hex(txn.c:digest(fingerprint, 'md5')))
 
     txn:set_var('txn.fingerprint_ja3n_raw', fingerprint)
     txn:set_var('txn.fingerprint_ja3n', fingerprint_hash)
