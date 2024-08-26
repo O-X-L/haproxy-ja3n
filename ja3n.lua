@@ -3,7 +3,7 @@
 -- License: MIT
 
 -- JA3N = sorted extensions to tackle browsers randomizing their order
--- see: https://tlsfingerprint.io/norm_fp
+-- see: https://github.com/salesforce/ja3/issues/88
 -- examples:
 --   before (JA3): 51-27-0-16-17513-65281-23-65037-11-45-43-5-35-10-18-13
 --   after (JA3N): 0-5-10-11-13-16-18-23-27-35-43-45-51-17513-65037-65281
