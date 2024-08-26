@@ -13,8 +13,6 @@
 --   log: http-request capture var(txn.fingerprint_ja3n) len 32
 --   acl: var(txn.fingerprint_ja3n) -m str a195b9c006fcb23ab9a2343b0871e362
 
-local DEBUG = false
-
 local function split_string(str, delimiter)
     local result = {}
     local from  = 1
@@ -37,24 +35,14 @@ local function sortNumbers(a, b)
     return tonumber(a) < tonumber(b)
 end
 
-local function debug_var(txn, name, value)
-    if (DEBUG)
-    then
-        txn:set_var('txn.fingerprint_ja3n_debug_' .. name, value)
-    end
-end
-
-
 function fingerprint_ja3n(txn)
     local p1 = tostring(txn.f:ssl_fc_protocol_hello_id())
     local p2 = tostring(txn.c:be2dec(txn.f:ssl_fc_cipherlist_bin(1), '-', 2))
 
     local p3u = tostring(txn.c:be2dec(txn.f:ssl_fc_extlist_bin(1), '-', 2))
-    debug_var(txn, 'extensions_1', p3u)
     local p3l = split_string(p3u, '-')
     table.sort(p3l, sortNumbers)
     local p3 = table.concat(p3l, '-')
-    debug_var(txn, 'extensions_2', p3)
 
     local p4 = tostring(txn.c:be2dec(txn.f:ssl_fc_eclist_bin(1),'-',2))
     local p5 = tostring(txn.c:be2dec(txn.f:ssl_fc_ecformats_bin(),'-',1))
