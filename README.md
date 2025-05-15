@@ -11,12 +11,13 @@ About JA3:
 
 About JA4:
 
-* [HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4)
 * [JA4+ Suite](https://github.com/FoxIO-LLC/ja4/blob/main/technical_details/README.md)
 * [FoxIO Repository](https://github.com/FoxIO-LLC/ja4)
 * [Cloudflare Blog](https://blog.cloudflare.com/ja4-signals)
 * [FoxIO Blog](https://blog.foxio.io/ja4%2B-network-fingerprinting)
 * [FoxIO JA4 Database](https://ja4db.com/)
+* [JA4 HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4)
+* [JA4H HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4h)
 
 ----
 
