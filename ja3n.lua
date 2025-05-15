@@ -1,6 +1,7 @@
 -- Source: https://github.com/O-X-L/haproxy-ja3n
 -- Copyright (C) 2024 Rath Pascal
 -- License: MIT
+-- Algorithm License: BSD 3-Clause
 
 -- JA3N = sorted extensions to tackle browsers randomizing their order
 -- see: https://github.com/salesforce/ja3/issues/88
