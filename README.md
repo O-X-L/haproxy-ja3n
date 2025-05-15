@@ -36,7 +36,7 @@ About JA4:
 
 ## License
 
-This script is licensed under the MIT-license and thus if free to use.
+This script is licensed under the MIT-license and thus is free to use.
 
 The JA3 algorithm is licensed under the `BSD 3-Clause` license and also free to use - see: [salesforce/ja3](https://github.com/salesforce/ja3/blob/master/LICENSE.txt)
 
