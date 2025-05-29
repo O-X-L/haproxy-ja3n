@@ -57,5 +57,12 @@ If you have:
 
 * Run: `bash test/run.sh`
 * Access the test website: https://localhost:6969/
+* Or query the API: `curl -v https://localhost:6969/api`
+  ```
+  {
+    "fingerprint": "845df01a87c23862312ff1a2756c3b26",
+    "details": "771,4865-4866-4867-49195-49199-49196-49200-52393-52392-49171-49172-156-157-47-53,0-5-10-11-13-16-18-23-27-35-41-43-45-51-17613-65037-65281,4588-29-23-24,0"
+  }
+  ```
 
 Exit with `CTRL+C`
