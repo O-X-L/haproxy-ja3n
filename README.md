@@ -1,5 +1,7 @@
 # HAProxy - JA3N TLS Client-Fingerprint - Lua Plugin
 
+Test it: [fingerprint.oxl.app](https://fingerprint.oxl.app)
+
 ## Intro
 
 About JA3:
