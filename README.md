@@ -19,6 +19,9 @@ About JA4:
 * [JA4 HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4)
 * [JA4H HAProxy Lua Plugin](https://github.com/O-X-L/haproxy-ja4h)
 
+Browser Fingerprinting:
+* [Browser Fingerprinting](https://github.com/O-X-L/browser-fingerprint
+
 ----
 
 ## Usage
