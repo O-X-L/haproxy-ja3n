@@ -1,5 +1,13 @@
 # HAProxy - JA3N TLS Client-Fingerprint - Lua Plugin
 
+<p align="center">
+    <a title="Support this Project (Donate, Support-Licenses)" href="https://shop.oxl.app/collections/open-source">
+        <img src="https://files.oxl.at/img/badge-oss-support.svg" alt="Support Badge (Donate, Support-Licenses)"/>
+    </a>
+</p>
+
+----
+
 Test it: [fingerprint.oxl.app](https://fingerprint.oxl.app)
 
 ## Intro
