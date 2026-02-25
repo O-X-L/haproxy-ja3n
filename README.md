@@ -14,7 +14,6 @@ Test it: [fingerprint.oxl.app](https://fingerprint.oxl.app)
 
 About JA3:
 * [Salesforce Repository](https://github.com/salesforce/ja3)
-* [HAProxy Enterprise JA3 Fingerprint](https://customer-docs.haproxy.com/bot-management/client-fingerprinting/tls-fingerprint/)
 * [Why JA3 broke => JA3N](https://github.com/salesforce/ja3/issues/88)
 
 ### NEW: JA4
